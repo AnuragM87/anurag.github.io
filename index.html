@@ -53,7 +53,7 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             cursor: pointer;
-            transition: background 180ms ease, color 180ms ease;
+            transition: background 180ms ease, color 180ms ease, border-color 650ms ease;
         }
 
         button:hover,
@@ -79,25 +79,41 @@
         }
 
         .vanishing button {
-            animation: dissolve 650ms ease forwards;
+            border-color: transparent;
         }
 
-        .final {
-            position: fixed;
-            inset: 0;
+        #result {
+            display: none;
+            justify-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        #result h1 {
             display: grid;
             place-items: center;
-            margin: 0;
             font-size: clamp(4rem, 16vw, 12rem);
-            opacity: 0;
-            transform: translateY(0.15em);
-            transition: opacity 900ms ease, transform 900ms ease;
-            pointer-events: none;
         }
 
-        .complete .final {
-            opacity: 1;
-            transform: translateY(0);
+        body.complete #intro {
+            display: none;
+        }
+
+        body.complete #result {
+            display: grid;
+            animation: reveal 900ms ease both;
+        }
+
+        @keyframes reveal {
+            from {
+            opacity: 0;
+            transform: translateY(0.15em);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes dissolve {
@@ -126,18 +142,20 @@
 </head>
 <body>
     <main id="intro">
-        <h1 id="message">Hello, world! My site is working.</h1>
         <button id="dismiss" type="button">Click me</button>
     </main>
-    <h1 class="final" aria-live="polite">Hello</h1>
+    <main id="result" aria-live="polite">
+        <h1>Hello</h1>
+        <button id="back" type="button">Go back</button>
+    </main>
 
     <script>
         const intro = document.querySelector("#intro");
-        const message = document.querySelector("#message");
         const button = document.querySelector("#dismiss");
+        const back = document.querySelector("#back");
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-        const characters = [...message.textContent].map((character, index) => {
+        const characters = [...button.textContent].map((character, index) => {
             const x = `${(Math.random() - 0.5) * 260}px`;
             const y = `${-40 - Math.random() * 180}px`;
             const rotate = `${(Math.random() - 0.5) * 100}deg`;
@@ -151,16 +169,20 @@
             span.textContent = character;
             return span;
         });
-        message.replaceChildren(...characters);
+        button.replaceChildren(...characters);
 
         button.addEventListener("click", () => {
             if (intro.classList.contains("vanishing")) return;
             intro.classList.add("vanishing");
 
             window.setTimeout(() => {
-                intro.remove();
                 document.body.classList.add("complete");
             }, reducedMotion.matches ? 50 : 2000);
+        });
+
+        back.addEventListener("click", () => {
+            document.body.classList.remove("complete");
+            intro.classList.remove("vanishing");
         });
     </script>
 </body>
