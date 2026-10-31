@@ -1,9 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My GitHub Website</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #10110f;
+            color: #f0eee7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 50% 46%, rgb(91 86 66 / 18%), transparent 48%),
+                #10110f;
+        }
+
+        main {
+            display: grid;
+            justify-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            max-width: 20ch;
+            margin: 0;
+            font-size: clamp(2rem, 7vw, 5rem);
+            font-weight: 400;
+            line-height: 1.08;
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #d5c99d;
+            border-radius: 2px;
+            background: transparent;
+            color: #f0eee7;
+            font: 600 0.9rem/1.2 system-ui, sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 180ms ease, color 180ms ease;
+        }
+
+        button:hover,
+        button:focus-visible {
+            background: #d5c99d;
+            color: #10110f;
+        }
+
+        button:focus-visible {
+            outline: 2px solid #f0eee7;
+            outline-offset: 4px;
+        }
+
+        .char {
+            display: inline-block;
+            white-space: pre;
+            will-change: transform, opacity, filter;
+        }
+
+        .vanishing .char {
+            animation: dissolve 1.15s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+            animation-delay: var(--delay);
+        }
+
+        .vanishing button {
+            animation: dissolve 650ms ease forwards;
+        }
+
+        .final {
+            position: fixed;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            margin: 0;
+            font-size: clamp(4rem, 16vw, 12rem);
+            opacity: 0;
+            transform: translateY(0.15em);
+            transition: opacity 900ms ease, transform 900ms ease;
+            pointer-events: none;
+        }
+
+        .complete .final {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes dissolve {
+            0% {
+                opacity: 1;
+                filter: blur(0);
+                transform: translate(0, 0) rotate(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                filter: blur(7px);
+                transform: translate(var(--x), var(--y)) rotate(var(--rotate)) scale(0.15);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-delay: 0ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, world! My site is working.</h1>
+    <main id="intro">
+        <h1 id="message">Hello, world! My site is working.</h1>
+        <button id="dismiss" type="button">Click me</button>
+    </main>
+    <h1 class="final" aria-live="polite">Hello</h1>
+
+    <script>
+        const intro = document.querySelector("#intro");
+        const message = document.querySelector("#message");
+        const button = document.querySelector("#dismiss");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        const characters = [...message.textContent].map((character, index) => {
+            const x = `${(Math.random() - 0.5) * 260}px`;
+            const y = `${-40 - Math.random() * 180}px`;
+            const rotate = `${(Math.random() - 0.5) * 100}deg`;
+            const delay = `${Math.random() * 0.45 + index * 0.008}s`;
+            const span = document.createElement("span");
+            span.className = "char";
+            span.style.setProperty("--x", x);
+            span.style.setProperty("--y", y);
+            span.style.setProperty("--rotate", rotate);
+            span.style.setProperty("--delay", delay);
+            span.textContent = character;
+            return span;
+        });
+        message.replaceChildren(...characters);
+
+        button.addEventListener("click", () => {
+            if (intro.classList.contains("vanishing")) return;
+            intro.classList.add("vanishing");
+
+            window.setTimeout(() => {
+                intro.remove();
+                document.body.classList.add("complete");
+            }, reducedMotion.matches ? 50 : 2000);
+        });
+    </script>
 </body>
 </html>
