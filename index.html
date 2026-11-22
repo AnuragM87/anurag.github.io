@@ -1,67 +1,418 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Anurag Chaudhary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- ============ SIMPLE VERSION (plain HTML, no styling) ============ -->
     <main id="simple">
-        <h1>Anurag Chaudhary</h1>
-        <p>Hi, I build things for the web. This is the plain-HTML version of my portfolio.</p>
+        <div class="fancy-link">
+            Want the fancy version?
+            <button id="to-fancy" type="button">Click me</button>
+        </div>
+
+        <header class="header">
+            <h1>Anurag Chaudhary</h1>
+            <p>
+                Quantum Software Engineer &middot; Hyderabad, India<br>
+                <a href="mailto:anuragchaudharym87@gmail.com">anuragchaudharym87@gmail.com</a> |
+                <a href="https://www.linkedin.com/in/anurag-29">LinkedIn</a> |
+                <a href="https://github.com/AnuragM87">GitHub</a>
+            </p>
+        </header>
         <hr>
 
-        <h2>About</h2>
-        <p>A short paragraph about who you are and what you do goes here.</p>
+        <h2>Professional Summary</h2>
+        <p>
+            Quantum Software Engineer passionate about building scalable quantum computing solutions
+            that bridge research and real-world applications, with interests in quantum software,
+            algorithms, compiler technologies, and hybrid quantum&ndash;classical computing.
+            M.Tech in Quantum Computing (DIAT-DRDO) with prior R&amp;D software engineering experience,
+            and practical experience developing quantum algorithms and executing them on diverse
+            quantum hardware, including IBM and IQM.
+        </p>
 
-        <h2>Work</h2>
-        <p>Project one &mdash; one line description.</p>
-        <p>Project two &mdash; one line description.</p>
+        <h2>Education</h2>
 
-        <h2>Contact</h2>
-        <p><a href="https://github.com/AnuragM87">GitHub</a></p>
+        <div class="row">
+            <strong>Defence Institute of Advanced Technology (DIAT-DRDO), Pune</strong>
+            <em>2024 &ndash; 2026</em>
+        </div>
+        <div class="row">
+            <span>M.Tech in Quantum Computing</span>
+            <span>CGPA: 8.45</span>
+        </div>
 
-        <hr>
-        <p>Want the fancy version?</p>
-        <button id="to-fancy" type="button">Click me</button>
+        <div class="row spaced">
+            <strong>Madan Mohan Malaviya University of Technology, Gorakhpur</strong>
+            <em>2018 &ndash; 2022</em>
+        </div>
+        <div class="row">
+            <span>B.Tech in Computer Science and Engineering</span>
+            <span>CGPA: 7.43</span>
+        </div>
+
+        <h2>Work Experience</h2>
+
+        <div class="row">
+            <strong>Quantum Software Engineer, QClairvoyance Quantum Labs Pvt. Ltd.</strong>
+            <em>June 2026 &ndash; Present</em>
+        </div>
+        <ul>
+            <li>Developed, as part of a core research team, <strong>FMO-QVM-HCI-HSQD</strong>, a resource-efficient
+                sample-based framework combining Fragment Molecular Orbital decomposition, half-qubit sampling
+                (HCI-HSQD), and QPU virtualization; demonstrated on IBM Heron processors
+                (<code>ibm_marrakesh</code>, <code>ibm_boston</code>) with fragment circuits of up to
+                <strong>52 qubits</strong>.</li>
+            <li>Engineered a <strong>Quantum Virtual Machine (QVM)</strong> that partitions a QPU into
+                quality-weighted execution regions from calibration data and runs independent molecular
+                fragment circuits concurrently in a single job.</li>
+            <li>Reduced QPU time by <strong>82%</strong> versus sequential execution and two-qubit depth by up to
+                <strong>47%</strong>, while staying within chemical accuracy (1.22 mHa from FMO-HCI for the
+                carmofur&ndash;M<sup>pro</sup> protein&ndash;ligand complex in 6-31G).</li>
+            <li>Applied fragmentation techniques (DMET, FMO, EWF) with SQD and QSCI-RBM to protein&ndash;ligand
+                ground-state energies; developing Qiskit Functions for drug discovery in the quantum utility regime.</li>
+        </ul>
+
+        <div class="row">
+            <strong>Software Engineer &ndash; I (R&amp;D), Verifone India Technology Pvt. Ltd.</strong>
+            <em>Sep 2022 &ndash; July 2024</em>
+        </div>
+        <ul>
+            <li>Developed and enhanced transaction features for POS payment terminals (V240m, P400, V400, P200),
+                ensuring compliance with EMV standards.</li>
+            <li>Collaborated with QA, Product, and management teams to diagnose and resolve software bugs,
+                improving system stability and performance.</li>
+            <li>Delivered support for global clients, troubleshooting production issues and deploying secure
+                software updates.</li>
+            <li>Tech Stack: C, C++, Python, Linux, Jenkins, EMV.</li>
+        </ul>
+
+        <h2>Technical Skills</h2>
+        <ul>
+            <li><strong>Programming:</strong> Python, C, C++, JavaScript, SQL, VHDL</li>
+            <li><strong>Quantum Software:</strong> Qiskit, Qiskit Functions, PennyLane, PySCF, Quantum Virtual Machines, QKD</li>
+            <li><strong>Quantum Algorithms:</strong> SQD, VQE, QAOA, QPE, QFT, Grover, Shor, Simon, Deutsch&ndash;Jozsa, QML</li>
+            <li><strong>Quantum Chemistry:</strong> FMO, DMET, LUCJ ansatz, selected CI (HCI), CASCI/CCSD(T) benchmarking</li>
+            <li><strong>Quantum Hardware:</strong> IBM Heron (Marrakesh, Boston, Phoenix), IQM (Emerald)</li>
+            <li><strong>Quantum Optics:</strong> SPDC Source Setup, Optical Alignment, Laser Handling, Fiber Coupling</li>
+            <li><strong>Development &amp; Tools:</strong> Machine Learning, Data Analytics, Git, Linux, Jenkins, Bitbucket, CI/CD</li>
+            <li><strong>Certifications:</strong> IBM Quantum &ndash; Quantum Machine Learning (Apr 2026), Variational Algorithm Design (Mar 2026)</li>
+        </ul>
+
+        <h2>Research Preprint</h2>
+        <p>
+            <strong>Resource-Efficient Sample-Based Quantum Simulation through Fragmentation and Virtual
+            Partitioning of QPU</strong><br>
+            <em>arXiv (quant-ph), Oct 2026.</em>
+        </p>
+
+        <h2>Research Internships</h2>
+
+        <div class="row">
+            <strong>QKD Simulation Intern, IISER Bhopal (QuCIS Lab)</strong>
+            <em>May 2025 &ndash; July 2025</em>
+        </div>
+        <ul>
+            <li>Developed a modular QKD simulator for BB84, DPS, and COW protocols
+                (<a href="https://github.com/AnuragM87/QKD_IISERB_Simulator">GitHub</a>).</li>
+            <li>Modelled multi-node networks with realistic hardware (sources, MZIs, modulators, detectors) and
+                channel imperfections, with an interactive Python UI; part of India's National Quantum Mission.</li>
+        </ul>
     </main>
 
-    <!-- ============ STYLISH VERSION (fill in later) ============ -->
+    <!-- ============ STYLISH VERSION ============ -->
     <div id="fancy" hidden>
-        <button id="to-simple" class="back-btn" type="button">&larr; Simple version</button>
+        <nav class="nav">
+            <div class="nav-inner">
+                <a class="logo" href="#top">AC<span class="accent">.</span></a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="to-simple" class="back-btn" type="button">&larr; Simple version</button>
+            </div>
+        </nav>
 
-        <header class="hero">
-            <p class="eyebrow reveal" style="--i:0">Portfolio</p>
-            <h1 class="reveal" style="--i:1">Anurag Chaudhary<span class="accent">.</span></h1>
-            <p class="tagline reveal" style="--i:2">Developer &middot; Builder &middot; Problem solver</p>
+        <header class="hero" id="top">
+            <div>
+                <p class="eyebrow reveal" style="--i:0" data-dust-box>
+                    <span class="pulse"></span>
+                    Quantum Software Engineer &middot; Hyderabad, India
+                </p>
+                <h1 class="reveal" style="--i:1">Anurag Chaudhary<span class="accent">.</span></h1>
+                <p class="tagline reveal" style="--i:2">
+                    I build software that runs on real quantum hardware &mdash;
+                    <span class="typed" id="typed">quantum algorithms</span><span class="caret"></span>
+                </p>
+                <div class="cta reveal" style="--i:3">
+                    <a class="btn primary" href="mailto:anuragchaudharym87@gmail.com">Get in touch</a>
+                    <a class="btn" href="#research" data-dust-box>View research</a>
+                    <a class="btn" href="https://github.com/AnuragM87" data-dust-box>GitHub &nearr;</a>
+                </div>
+            </div>
+
+            <div class="bloch-wrap reveal" style="--i:2">
+                <canvas id="bloch" aria-label="Animated Bloch sphere showing a qubit state precessing"></canvas>
+                <p class="bloch-caption">|&psi;&rang; = cos(&theta;/2)|0&rang; + e<sup>i&phi;</sup> sin(&theta;/2)|1&rang;</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat reveal" style="--i:4" data-dust-box>
+                    <b data-count="82" data-suffix="%">82%</b>
+                    <span>less QPU time vs. sequential runs</span>
+                </div>
+                <div class="stat reveal" style="--i:5" data-dust-box>
+                    <b data-count="47" data-suffix="%">47%</b>
+                    <span>lower two-qubit depth</span>
+                </div>
+                <div class="stat reveal" style="--i:6" data-dust-box>
+                    <b data-count="52">52</b>
+                    <span>qubits per fragment circuit</span>
+                </div>
+                <div class="stat reveal" style="--i:7" data-dust-box>
+                    <b data-count="1.22" data-decimals="2" data-suffix=" mHa">1.22 mHa</b>
+                    <span>from the FMO-HCI reference</span>
+                </div>
+            </div>
         </header>
 
-        <section class="section">
-            <h2 class="reveal" style="--i:3">Selected work</h2>
-            <div class="cards">
-                <article class="card reveal" style="--i:4" data-dust-box>
-                    <h3>Project one</h3>
-                    <p>Coming soon.</p>
+        <section class="section" id="about">
+            <h2 class="section-title sr"><span class="num">01</span>About</h2>
+            <div class="about">
+                <p class="lead sr">
+                    Quantum Software Engineer passionate about building scalable quantum computing solutions
+                    that bridge research and real-world applications, with interests in quantum software,
+                    algorithms, compiler technologies, and hybrid quantum&ndash;classical computing.
+                    M.Tech in Quantum Computing (DIAT-DRDO) with prior R&amp;D software engineering experience,
+                    and practical experience developing quantum algorithms and executing them on diverse
+                    quantum hardware, including IBM and IQM.
+                </p>
+                <dl class="card facts sr" style="--d:1" data-dust-box>
+                    <div><dt>Currently</dt><dd>Quantum Software Engineer, QClairvoyance Quantum Labs</dd></div>
+                    <div><dt>Studied</dt><dd>M.Tech Quantum Computing, DIAT-DRDO</dd></div>
+                    <div><dt>Hardware</dt><dd>IBM Heron &middot; IQM Emerald</dd></div>
+                    <div><dt>Based in</dt><dd>Hyderabad, India</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <h2 class="section-title sr"><span class="num">02</span>Education</h2>
+            <div class="grid">
+                <article class="card sr" data-dust-box>
+                    <p class="label">2024 &ndash; 2026</p>
+                    <h3>M.Tech in Quantum Computing</h3>
+                    <p>Defence Institute of Advanced Technology (DIAT-DRDO), Pune</p>
+                    <p class="gpa">8.45<small>CGPA</small></p>
                 </article>
-                <article class="card reveal" style="--i:5" data-dust-box>
-                    <h3>Project two</h3>
-                    <p>Coming soon.</p>
-                </article>
-                <article class="card reveal" style="--i:6" data-dust-box>
-                    <h3>Project three</h3>
-                    <p>Coming soon.</p>
+                <article class="card sr" style="--d:1" data-dust-box>
+                    <p class="label">2018 &ndash; 2022</p>
+                    <h3>B.Tech in Computer Science and Engineering</h3>
+                    <p>Madan Mohan Malaviya University of Technology, Gorakhpur</p>
+                    <p class="gpa">7.43<small>CGPA</small></p>
                 </article>
             </div>
+        </section>
+
+        <section class="section" id="experience">
+            <h2 class="section-title sr"><span class="num">03</span>Experience</h2>
+            <ol class="timeline">
+                <li>
+                    <article class="card sr" data-dust-box>
+                        <div class="job-head">
+                            <h3>Quantum Software Engineer</h3>
+                            <span class="when">June 2026 &ndash; Present</span>
+                        </div>
+                        <p class="org">QClairvoyance Quantum Labs Pvt. Ltd.</p>
+                        <ul>
+                            <li>Developed, as part of a core research team, <strong>FMO-QVM-HCI-HSQD</strong>, a resource-efficient
+                                sample-based framework combining Fragment Molecular Orbital decomposition, half-qubit sampling
+                                (HCI-HSQD), and QPU virtualization; demonstrated on IBM Heron processors
+                                (<code>ibm_marrakesh</code>, <code>ibm_boston</code>) with fragment circuits of up to
+                                <strong>52 qubits</strong>.</li>
+                            <li>Engineered a <strong>Quantum Virtual Machine (QVM)</strong> that partitions a QPU into
+                                quality-weighted execution regions from calibration data and runs independent molecular
+                                fragment circuits concurrently in a single job.</li>
+                            <li>Reduced QPU time by <strong>82%</strong> versus sequential execution and two-qubit depth by up to
+                                <strong>47%</strong>, while staying within chemical accuracy (1.22 mHa from FMO-HCI for the
+                                carmofur&ndash;M<sup>pro</sup> protein&ndash;ligand complex in 6-31G).</li>
+                            <li>Applied fragmentation techniques (DMET, FMO, EWF) with SQD and QSCI-RBM to protein&ndash;ligand
+                                ground-state energies; developing Qiskit Functions for drug discovery in the quantum utility regime.</li>
+                        </ul>
+                        <ul class="tags">
+                            <li class="tag">Qiskit</li>
+                            <li class="tag">SQD</li>
+                            <li class="tag">FMO</li>
+                            <li class="tag">DMET</li>
+                            <li class="tag">QVM</li>
+                            <li class="tag">IBM Heron</li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article class="card sr" data-dust-box>
+                        <div class="job-head">
+                            <h3>Software Engineer &ndash; I (R&amp;D)</h3>
+                            <span class="when">Sep 2022 &ndash; July 2024</span>
+                        </div>
+                        <p class="org">Verifone India Technology Pvt. Ltd.</p>
+                        <ul>
+                            <li>Developed and enhanced transaction features for POS payment terminals (V240m, P400, V400, P200),
+                                ensuring compliance with EMV standards.</li>
+                            <li>Collaborated with QA, Product, and management teams to diagnose and resolve software bugs,
+                                improving system stability and performance.</li>
+                            <li>Delivered support for global clients, troubleshooting production issues and deploying secure
+                                software updates.</li>
+                        </ul>
+                        <ul class="tags">
+                            <li class="tag">C</li>
+                            <li class="tag">C++</li>
+                            <li class="tag">Python</li>
+                            <li class="tag">Linux</li>
+                            <li class="tag">Jenkins</li>
+                            <li class="tag">EMV</li>
+                        </ul>
+                    </article>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section" id="skills">
+            <h2 class="section-title sr"><span class="num">04</span>Technical Skills</h2>
+            <div class="grid">
+                <article class="card sr" data-dust-box>
+                    <h3>Programming</h3>
+                    <ul class="tags">
+                        <li class="tag">Python</li><li class="tag">C</li><li class="tag">C++</li>
+                        <li class="tag">JavaScript</li><li class="tag">SQL</li><li class="tag">VHDL</li>
+                    </ul>
+                </article>
+                <article class="card sr" style="--d:1" data-dust-box>
+                    <h3>Quantum Software</h3>
+                    <ul class="tags">
+                        <li class="tag">Qiskit</li><li class="tag">Qiskit Functions</li><li class="tag">PennyLane</li>
+                        <li class="tag">PySCF</li><li class="tag">Quantum Virtual Machines</li><li class="tag">QKD</li>
+                    </ul>
+                </article>
+                <article class="card sr" style="--d:2" data-dust-box>
+                    <h3>Quantum Algorithms</h3>
+                    <ul class="tags">
+                        <li class="tag">SQD</li><li class="tag">VQE</li><li class="tag">QAOA</li><li class="tag">QPE</li>
+                        <li class="tag">QFT</li><li class="tag">Grover</li><li class="tag">Shor</li><li class="tag">Simon</li>
+                        <li class="tag">Deutsch&ndash;Jozsa</li><li class="tag">QML</li>
+                    </ul>
+                </article>
+                <article class="card sr" data-dust-box>
+                    <h3>Quantum Chemistry</h3>
+                    <ul class="tags">
+                        <li class="tag">FMO</li><li class="tag">DMET</li><li class="tag">LUCJ ansatz</li>
+                        <li class="tag">Selected CI (HCI)</li><li class="tag">CASCI/CCSD(T) benchmarking</li>
+                    </ul>
+                </article>
+                <article class="card sr" style="--d:1" data-dust-box>
+                    <h3>Quantum Hardware</h3>
+                    <ul class="tags">
+                        <li class="tag">IBM Heron &middot; Marrakesh</li><li class="tag">IBM Heron &middot; Boston</li>
+                        <li class="tag">IBM Heron &middot; Phoenix</li><li class="tag">IQM Emerald</li>
+                    </ul>
+                </article>
+                <article class="card sr" style="--d:2" data-dust-box>
+                    <h3>Quantum Optics</h3>
+                    <ul class="tags">
+                        <li class="tag">SPDC Source Setup</li><li class="tag">Optical Alignment</li>
+                        <li class="tag">Laser Handling</li><li class="tag">Fiber Coupling</li>
+                    </ul>
+                </article>
+                <article class="card sr" data-dust-box>
+                    <h3>Development &amp; Tools</h3>
+                    <ul class="tags">
+                        <li class="tag">Machine Learning</li><li class="tag">Data Analytics</li><li class="tag">Git</li>
+                        <li class="tag">Linux</li><li class="tag">Jenkins</li><li class="tag">Bitbucket</li><li class="tag">CI/CD</li>
+                    </ul>
+                </article>
+                <article class="card sr" style="--d:1" data-dust-box>
+                    <h3>Certifications</h3>
+                    <ul class="tags">
+                        <li class="tag">IBM Quantum &middot; Quantum Machine Learning (Apr 2026)</li>
+                        <li class="tag">IBM Quantum &middot; Variational Algorithm Design (Mar 2026)</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="research">
+            <h2 class="section-title sr"><span class="num">05</span>Research</h2>
+            <div class="research">
+                <article class="card featured sr" data-dust-box>
+                    <p class="label">Preprint &middot; arXiv (quant-ph) &middot; Oct 2026</p>
+                    <h3>Resource-Efficient Sample-Based Quantum Simulation through Fragmentation and Virtual Partitioning of QPU</h3>
+                    <p>
+                        Introduces FMO-QVM-HCI-HSQD: Fragment Molecular Orbital decomposition, half-qubit sampling
+                        and a Quantum Virtual Machine that runs molecular fragments concurrently on one QPU,
+                        demonstrated on IBM Heron processors.
+                    </p>
+                    <div class="metrics">
+                        <div><b>82%</b><span>less QPU time</span></div>
+                        <div><b>47%</b><span>lower two-qubit depth</span></div>
+                        <div><b>52</b><span>qubit fragment circuits</span></div>
+                    </div>
+                </article>
+
+                <article class="card sr" style="--d:1" data-dust-box>
+                    <div class="job-head">
+                        <p class="label">Research Internship</p>
+                        <span class="when">May 2025 &ndash; July 2025</span>
+                    </div>
+                    <h3>QKD Simulation Intern, IISER Bhopal (QuCIS Lab)</h3>
+                    <ul>
+                        <li>Developed a modular QKD simulator for BB84, DPS, and COW protocols.</li>
+                        <li>Modelled multi-node networks with realistic hardware (sources, MZIs, modulators, detectors) and
+                            channel imperfections, with an interactive Python UI; part of India's National Quantum Mission.</li>
+                    </ul>
+                    <ul class="tags">
+                        <li class="tag">BB84</li><li class="tag">DPS</li><li class="tag">COW</li><li class="tag">Python</li>
+                    </ul>
+                    <p style="margin-top:18px">
+                        <a class="link" href="https://github.com/AnuragM87/QKD_IISERB_Simulator">View the simulator on GitHub &nearr;</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="card featured contact sr" data-dust-box>
+                <p class="label">Contact</p>
+                <h2>Let&rsquo;s build something quantum.</h2>
+                <p>Open to conversations about quantum software, algorithms and research collaborations.</p>
+                <div class="cta">
+                    <a class="btn primary" href="mailto:anuragchaudharym87@gmail.com">anuragchaudharym87@gmail.com</a>
+                    <a class="btn" href="https://www.linkedin.com/in/anurag-29" data-dust-box>LinkedIn &nearr;</a>
+                    <a class="btn" href="https://github.com/AnuragM87" data-dust-box>GitHub &nearr;</a>
+                </div>
+            </div>
+            <p class="footer">&copy; 2026 Anurag Chaudhary</p>
         </section>
     </div>
 
     <script src="dust.js"></script>
+    <script src="bloch.js"></script>
     <script>
         const simple = document.getElementById("simple");
         const fancy = document.getElementById("fancy");
+        const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
         let busy = false;
 
         function show(el) {
@@ -77,13 +428,79 @@
             await Dust.vanish(from);
             from.hidden = true;
             document.body.classList.toggle("fancy-mode", fancyMode);
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: "instant" });
             show(to);
             busy = false;
         }
 
         document.getElementById("to-fancy").addEventListener("click", () => swap(simple, fancy, true));
         document.getElementById("to-simple").addEventListener("click", () => swap(fancy, simple, false));
+
+        // ---------- stylish page extras ----------
+
+        // Sections rise in as they scroll into view.
+        const revealer = new IntersectionObserver((entries) => {
+            for (const e of entries) {
+                if (!e.isIntersecting) continue;
+                e.target.classList.add("in");
+                revealer.unobserve(e.target);
+            }
+        }, { threshold: 0.12 });
+        fancy.querySelectorAll(".sr").forEach((el) => revealer.observe(el));
+
+        // Hero numbers count up each time the stylish page opens.
+        function countUp(el) {
+            const target = parseFloat(el.dataset.count);
+            const decimals = Number(el.dataset.decimals || 0);
+            const suffix = el.dataset.suffix || "";
+            const start = performance.now();
+            const tick = (now) => {
+                const p = Math.min(1, (now - start) / 1400);
+                el.textContent = (target * (1 - Math.pow(1 - p, 3))).toFixed(decimals) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        }
+        document.getElementById("to-fancy").addEventListener("click", () => {
+            if (reducedMotion.matches) return;
+            // Start once the dust has cleared and the page is visible.
+            const wait = setInterval(() => {
+                if (fancy.hidden) return;
+                clearInterval(wait);
+                fancy.querySelectorAll("[data-count]").forEach(countUp);
+            }, 50);
+        });
+
+        // Typing effect in the tagline.
+        const phrases = [
+            "quantum algorithms",
+            "QPU virtualization",
+            "quantum chemistry on IBM & IQM",
+            "hybrid quantum–classical software",
+        ];
+        const typed = document.getElementById("typed");
+        if (!reducedMotion.matches) {
+            let phrase = 0, chars = phrases[0].length, deleting = true;
+            const type = () => {
+                const text = phrases[phrase];
+                chars += deleting ? -1 : 1;
+                typed.textContent = text.slice(0, chars);
+                let delay = deleting ? 35 : 70;
+                if (!deleting && chars === text.length) { deleting = true; delay = 1800; }
+                else if (deleting && chars === 0) { deleting = false; phrase = (phrase + 1) % phrases.length; delay = 300; }
+                setTimeout(type, delay);
+            };
+            setTimeout(type, 2500);
+        }
+
+        // Card spotlight follows the cursor.
+        fancy.querySelectorAll(".card").forEach((card) => {
+            card.addEventListener("pointermove", (e) => {
+                const r = card.getBoundingClientRect();
+                card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+                card.style.setProperty("--my", `${e.clientY - r.top}px`);
+            });
+        });
     </script>
 </body>
 </html>
