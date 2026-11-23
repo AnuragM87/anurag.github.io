@@ -5,20 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Anurag Chaudhary</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- ============ SIMPLE VERSION (plain HTML, no styling) ============ -->
     <main id="simple">
-        <div class="fancy-link">
-            Want the fancy version?
-            <button id="to-fancy" type="button">Click me</button>
-        </div>
-
         <header class="header">
             <h1>Anurag Chaudhary</h1>
             <p>
@@ -98,7 +90,7 @@
 
         <h2>Technical Skills</h2>
         <ul>
-            <li><strong>Programming:</strong> Python, C, C++, JavaScript, SQL, VHDL</li>
+            <li><strong>Programming:</strong> Python, C, C++, JavaScript, agentic programming, VHDL</li>
             <li><strong>Quantum Software:</strong> Qiskit, Qiskit Functions, PennyLane, PySCF, Quantum Virtual Machines, QKD</li>
             <li><strong>Quantum Algorithms:</strong> SQD, VQE, QAOA, QPE, QFT, Grover, Shor, Simon, Deutsch&ndash;Jozsa, QML</li>
             <li><strong>Quantum Chemistry:</strong> FMO, DMET, LUCJ ansatz, selected CI (HCI), CASCI/CCSD(T) benchmarking</li>
@@ -112,7 +104,8 @@
         <p>
             <strong>Resource-Efficient Sample-Based Quantum Simulation through Fragmentation and Virtual
             Partitioning of QPU</strong><br>
-            <em>arXiv (quant-ph), Oct 2026.</em>
+            <em>arXiv:2610.41986</em>
+            <a href="https://arxiv.org/abs/2610.41986v1">Read the preprint</a>
         </p>
 
         <h2>Research Internships</h2>
@@ -129,7 +122,11 @@
         </ul>
     </main>
 
-    <!-- ============ STYLISH VERSION ============ -->
+    <!-- Fancy version is temporarily disabled and preserved here for later. -->
+    <template id="fancy-version-disabled">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
     <div id="fancy" hidden>
         <nav class="nav">
             <div class="nav-inner">
@@ -297,7 +294,7 @@
                     <h3>Programming</h3>
                     <ul class="tags">
                         <li class="tag">Python</li><li class="tag">C</li><li class="tag">C++</li>
-                        <li class="tag">JavaScript</li><li class="tag">SQL</li><li class="tag">VHDL</li>
+                        <li class="tag">JavaScript</li><li class="tag">Agentic Programming</li><li class="tag">VHDL</li>
                     </ul>
                 </article>
                 <article class="card sr" style="--d:1" data-dust-box>
@@ -357,8 +354,8 @@
             <h2 class="section-title sr"><span class="num">05</span>Research</h2>
             <div class="research">
                 <article class="card featured sr" data-dust-box>
-                    <p class="label">Preprint &middot; arXiv (quant-ph) &middot; Oct 2026</p>
-                    <h3>Resource-Efficient Sample-Based Quantum Simulation through Fragmentation and Virtual Partitioning of QPU</h3>
+                    <p class="label">Preprint &middot; arXiv:2610.41986</p>
+                    <h3><a href="https://arxiv.org/abs/2610.41986v1">Resource-Efficient Sample-Based Quantum Simulation through Fragmentation and Virtual Partitioning of QPU</a></h3>
                     <p>
                         Introduces FMO-QVM-HCI-HSQD: Fragment Molecular Orbital decomposition, half-qubit sampling
                         and a Quantum Virtual Machine that runs molecular fragments concurrently on one QPU,
@@ -406,7 +403,9 @@
             <p class="footer">&copy; 2026 Anurag Chaudhary</p>
         </section>
     </div>
+    </template>
 
+    <template id="fancy-scripts-disabled">
     <script src="dust.js"></script>
     <script src="bloch.js"></script>
     <script>
@@ -502,5 +501,6 @@
             });
         });
     </script>
+    </template>
 </body>
 </html>
